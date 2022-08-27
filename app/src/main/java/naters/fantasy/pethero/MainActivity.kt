@@ -15,7 +15,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+/*
         setupView()
+*/
 
     // Loading Animation
       /*  findViewById<Button>(R.id.button).setOnClickListener {
