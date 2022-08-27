@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Pet Hero</string>
+    <string name="search_text">ค้นหาสัตว์เลี้ยง</string>
+    <string name="my_pet">สัตว์เลี้ยงของฉัน</string>
+    <string name="pet_birthdate">DD/MM/YYYY</string>
+    <string name="my_pet_to_human_tag">อายุคน</string>
+    <string name="my_pet_to_human">0 Year</string>
+    <string name="creat_new_pet_header">เพิ่มสัตว์เลี้ยงใหม่</string>
+    <string name="pet_name_tag">ชื่อ</string>
+    <string name="pet_gender_tag">เพศ</string>
+    <string name="pet_birthday_tag">วันเกิด</string>
+    <string name="pet_aboutme_tag">เกี่ยวกับฉัน</string>
 </resources>
