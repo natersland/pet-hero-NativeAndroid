@@ -8,12 +8,11 @@ import naters.fantasy.pethero.databinding.ActivityMainBinding
 import naters.fantasy.pethero.presentation.views.LoadingScreenDialogFragment
 
 class MainActivity : AppCompatActivity() {
-    private val binding: ActivityMainBinding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 /*
         setupView()

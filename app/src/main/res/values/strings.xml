@@ -10,4 +10,6 @@
     <string name="pet_gender_tag">เพศ</string>
     <string name="pet_birthday_tag">วันเกิด</string>
     <string name="pet_aboutme_tag">เกี่ยวกับฉัน</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
