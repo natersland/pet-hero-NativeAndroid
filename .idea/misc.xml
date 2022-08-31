@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.145" />
         <entry key="app/src/main/res/drawable/petherologo.xml" value="0.2115" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33858267716535434" />
+        <entry key="app/src/main/res/layout/fragment_authentication_screen.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.1068840579710145" />
         <entry key="app/src/main/res/layout/fragment_home_screen.xml" value="0.27760416666666665" />
         <entry key="app/src/main/res/layout/loading_screen_paw_animation.xml" value="0.1585612968591692" />
