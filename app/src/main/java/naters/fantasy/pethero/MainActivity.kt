@@ -1,11 +1,10 @@
 package naters.fantasy.pethero
 
-import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.FirebaseDatabase
 import naters.fantasy.pethero.databinding.ActivityMainBinding
-import naters.fantasy.pethero.presentation.views.LoadingScreenDialogFragment
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -14,6 +13,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val database = FirebaseDatabase.getInstance("https://pet-hero-a7506-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        val myRef = database.getReference("message")
+
+        myRef.setValue("Hello, World!")
 /*
         setupView()
 */
