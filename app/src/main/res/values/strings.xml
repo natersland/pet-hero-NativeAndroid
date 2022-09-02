@@ -2,16 +2,30 @@
     <string name="app_name">Pet Hero</string>
     <string name="search_text">ค้นหาสัตว์เลี้ยง</string>
     <string name="my_pet">สัตว์เลี้ยงของฉัน</string>
+    <string name="pet_name">ชื่อสัตว์เลี้ยง</string>
     <string name="pet_birthdate">DD/MM/YYYY</string>
-    <string name="my_pet_to_human_tag">อายุคน</string>
+    <string name="my_pet_to_human_tag">อายุคน: </string>
     <string name="my_pet_to_human">0 Year</string>
+    <!-- Create and Edit Pet -->
     <string name="create_new_pet_header">เพิ่มสัตว์เลี้ยงใหม่</string>
     <string name="pet_name_tag">ชื่อ</string>
     <string name="pet_gender_tag">เพศ</string>
-    <string name="pet_birthday_tag">วันเกิด</string>
+    <string name="pet_birthday_tag">วันเกิด: </string>
     <string name="pet_aboutme_tag">เกี่ยวกับฉัน</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="google_sign_up">Google Sign-Up</string>
     <string name="google_sign_in">Google Sign-In</string>
+    <string name="title_activity_create_account_screen">CreateAccountScreen</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="sign_up_button">สมัครสมาชิก</string>
+    <string name="pet_birthdate_value">DD/MM/YYYY (0.0 ปี)</string>
+    <string name="human_age_vlue">อายุคน: 0 ปี</string>
 </resources>
