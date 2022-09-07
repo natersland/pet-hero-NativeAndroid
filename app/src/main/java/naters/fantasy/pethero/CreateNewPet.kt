@@ -5,10 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import naters.fantasy.pethero.databinding.FragmentCreateAccountScreenBinding
+import naters.fantasy.pethero.databinding.FragmentCreateNewPetBinding
 import naters.fantasy.pethero.databinding.FragmentHomeScreenBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -16,12 +13,10 @@ import naters.fantasy.pethero.databinding.FragmentHomeScreenBinding
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class CreateAccountScreen : Fragment() {
-    private var mAuth: FirebaseAuth? = null
-    private var currentUser : FirebaseUser? = null
+class CreateNewPet : Fragment() {
 
-    private val binding: FragmentCreateAccountScreenBinding by lazy {
-        FragmentCreateAccountScreenBinding.inflate(layoutInflater)
+    private val binding: FragmentCreateNewPetBinding by lazy {
+        FragmentCreateNewPetBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
@@ -30,12 +25,19 @@ class CreateAccountScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        /*binding.signupButton.setOnClickListener{
-            val email = binding.inputEmailBox.text.trim()
-            val password = binding.inputPasswordBox.text.trim()
+        val petImage = binding.petPhotoShow
+        val petName = binding.petNameEditText
+        val petGender = when(binding.genderOptions?.checkedRadioButtonId){
+            R.id.option_female -> "female"
+            else -> { "male"}
+        }
+        val petBirthDate = binding.editTextDate
+        val aboutPet = binding.aboutPetText
 
-        }*/
+
         return binding.root
     }
+
+    // timestamp
 
 }

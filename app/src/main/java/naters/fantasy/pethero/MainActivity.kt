@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        // Database
+        /*// Database
         val database = FirebaseDatabase.getInstance("https://pet-hero-a7506-default-rtdb.asia-southeast1.firebasedatabase.app/")
         // test database zone
         val myRef = database.getReference("pet")//.push()
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             override fun onCancelled(p0: DatabaseError) {
                 Log.d("value: ", p0.toString())            }
 
-        })
+        })*/
 
 
 /*

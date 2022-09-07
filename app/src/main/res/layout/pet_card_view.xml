@@ -21,7 +21,7 @@
             <ImageView
                 android:id="@+id/card_pet_avatar"
                 android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
                 tools:srcCompat="@drawable/dog_1" />
@@ -79,7 +79,7 @@
                         android:id="@+id/card_birthday_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/pet_birthdate_value"
+                        android:text="@string/dd_mm_yyyy_x"
                         android:textSize="15sp" />
                 </LinearLayout>
                 <!-- Zone 3: To Human Age -->
@@ -97,7 +97,7 @@
                         android:id="@+id/card_human_age_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/human_age_vlue"
+                        android:text="@string/to_human_age"
                         android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
