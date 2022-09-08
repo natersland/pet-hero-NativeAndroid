@@ -52,6 +52,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:20.2.0'
     implementation 'com.google.firebase:firebase-auth:21.0.7'
 
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+
 
     /* Jitpack */
     //implementation 'com.github.TutorialsAndroid:GButton:v1.0.19'
