@@ -37,5 +37,9 @@
     <string name="female">หญิง</string>
     <string name="male">ชาย</string>
     <string name="about_me">เกี่ยวกับฉัน</string>
+    <string name="select_pet_type">ต้องการเพิ่ม?</string>
+    <string name="next_btn">ถัดไป</string>
+    <string name="cat">แมว</string>
+    <string name="dog">สุนัข</string>
 
 </resources>

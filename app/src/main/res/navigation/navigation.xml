@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/createNewPet">
+    app:startDestination="@id/createNewPetSelectType">
     <fragment
-        android:id="@+id/createNewPet"
-        android:name="naters.fantasy.pethero.CreateNewPet"
-        android:label="fragment_create_new_pet"
-        tools:layout="@layout/fragment_create_new_pet" />
+        android:id="@+id/createNewPetSelectType"
+        android:name="naters.fantasy.pethero.CreateNewPetSelectType"
+        android:label="fragment_create_new_pet_select_type"
+        tools:layout="@layout/fragment_create_new_pet_select_type" />
 </navigation>

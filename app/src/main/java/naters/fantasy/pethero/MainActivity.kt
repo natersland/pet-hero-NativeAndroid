@@ -22,39 +22,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val db = Firebase.firestore
-
-        // Create a new user with a first and last name
-        val user = hashMapOf(
-            "first" to "Ada",
-            "last" to "Lovelace",
-            "born" to 1815
-        )
-
-// Add a new document with a generated ID
-//        db.collection("users")
-//            .add(user)
-//            .addOnSuccessListener { documentReference ->
-//                println("DocumentSnapshot added with ID: ${documentReference.id}")
-//            }
-//            .addOnFailureListener { e ->
-//                println("Error $e")
-//            }
-
-
-        db.collection("users")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    println("${document.id} => ${document.data}")
-                }
-            }
-            .addOnFailureListener { exception ->
-                println("Error getting documents. $exception" )
-            }
-/*
-        setupView()
-*/
+//        setupView()
 
         // Loading Animation
         /*  findViewById<Button>(R.id.button).setOnClickListener {
@@ -68,6 +36,5 @@ class MainActivity : AppCompatActivity() {
         TODO("Not yet implemented")
     }
 }
-
 
 data class Pet(var name: String, var petAge: Int, var humanAge: Int, var petType: String)
