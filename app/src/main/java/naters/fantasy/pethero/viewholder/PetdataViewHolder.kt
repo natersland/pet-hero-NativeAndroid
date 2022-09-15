@@ -8,7 +8,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import naters.fantasy.pethero.R
 
-class petdataViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
+class PetdataViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
     var petCard = itemView.findViewById<CardView>(R.id.pet_card)
     var petAvatar = itemView.findViewById<ImageView>(R.id.card_pet_avatar)
     var petName = itemView.findViewById<TextView>(R.id.card_pet_name)

@@ -4,6 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import java.io.Serializable
+@Parcelize
 data class PetData(
     val id: Int?,
     val petName: String?,
@@ -11,6 +12,4 @@ data class PetData(
     val petAge: Double,
     val humanAge: Double?,
     val petGender: String?
-) {
-
-}
+) : Parcelable

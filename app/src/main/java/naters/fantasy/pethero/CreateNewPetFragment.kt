@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -32,6 +33,9 @@ class CreateNewPetFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        binding.btnBack?.setOnClickListener{ view:View->
+            view.findNavController().navigate(R.id.action_createNewPetFragment_to_createNewPetSelectType)
+        }
         val createNewPetBtn = binding.createNewPetBtn
 
         createNewPetBtn.setOnClickListener {

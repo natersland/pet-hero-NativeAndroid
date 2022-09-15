@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import naters.fantasy.pethero.HomeScreen
+import naters.fantasy.pethero.HomeScreenFragment
 import naters.fantasy.pethero.R
 import naters.fantasy.pethero.model.PetData
 
@@ -14,7 +14,7 @@ import naters.fantasy.pethero.model.PetData
  * Adapter for the [RecyclerView] in [MainActivity]. Displays [Affirmation] data object.
  */
 class ItemAdapter(
-    private val context: HomeScreen,
+    private val context: HomeScreenFragment,
     private val dataset: List<PetData>
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
