@@ -48,7 +48,7 @@
         >
 
         <ImageView
-            android:id="@+id/pet_photo_show"
+            android:id="@+id/pet_photo_preview"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:adjustViewBounds="true"

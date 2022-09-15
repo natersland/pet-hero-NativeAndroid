@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateNewPet">
+    tools:context=".CreateNewPetFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/create_new_pet_header"
@@ -53,7 +53,7 @@
             android:layout_height="128dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/dog_1"
+            android:src="@drawable/corgi"
              />
     </androidx.cardview.widget.CardView>
     <ImageButton
@@ -133,17 +133,17 @@
                         android:id="@+id/option_female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/shape_gender_button"
-                        android:button="@drawable/ic_baseline_search_24"
-                        android:text=""
-                        android:textSize="18sp" />
+                        android:text="@string/female"
+                        android:textSize="18sp"
+                        android:textColor="@color/black_brand"/>
 
                     <RadioButton
                         android:id="@+id/option_male"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/male"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textColor="@color/black_brand"/>
                 </RadioGroup>
 
             </LinearLayout>
@@ -163,12 +163,14 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/editTextDate"
+                <TextView
+                    android:id="@+id/petDatePicker"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/shape_button_background_gray_normal"
                     android:ems="10"
-                    android:inputType="date" />
+                    android:tooltipText="15/09/2022"
+                    app:drawableEndCompat="@drawable/ic_baseline_calendar_month_24" />
 
 
             </LinearLayout>

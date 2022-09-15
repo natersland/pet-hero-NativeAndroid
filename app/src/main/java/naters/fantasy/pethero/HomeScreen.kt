@@ -5,7 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import com.example.affirmations.adapter.ItemAdapter
+import naters.fantasy.pethero.data.Datasource
 import naters.fantasy.pethero.databinding.FragmentHomeScreenBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,6 +25,17 @@ class HomeScreen : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        // Initialize data.
+        val myDataset = Datasource().loadPetLists()
+
+        val recyclerView = binding.petRecyclerView
+        recyclerView.adapter = ItemAdapter(this, myDataset)
+        // Use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        recyclerView.setHasFixedSize(true)
+
+
         return binding.root
     }
 

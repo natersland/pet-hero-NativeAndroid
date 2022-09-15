@@ -1,19 +1,31 @@
 package naters.fantasy.pethero
 
+
+import android.content.Intent
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import naters.fantasy.pethero.databinding.FragmentCreateNewPetBinding
-class CreateNewPet : Fragment() {
+import java.util.*
+
+
+class CreateNewPetFragment : Fragment() {
 
     private val binding: FragmentCreateNewPetBinding by lazy {
         FragmentCreateNewPetBinding.inflate(layoutInflater)
     }
+    val applicationContext = getActivity()?.getApplicationContext()
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,7 +34,7 @@ class CreateNewPet : Fragment() {
 
         val createNewPetBtn = binding.createNewPetBtn
 
-        createNewPetBtn.setOnClickListener{
+        createNewPetBtn.setOnClickListener {
             createNewPet()
         }
 
@@ -30,10 +42,18 @@ class CreateNewPet : Fragment() {
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     private fun createNewPet() {
 
+        // Upload Pet Photo
+        val petImagePreview = binding.petPhotoPreview
+        val btnChooseImage = binding.uploadImageBtn
 
-        val petImage = binding.petPhotoShow
+        btnChooseImage.setOnClickListener{
+            launchGallery()
+        }
+
+        // Others
         val petName = binding.petNameEditText.text.toString()
         val petGender = when (binding.genderOptions?.checkedRadioButtonId) {
             R.id.option_female -> "female"
@@ -41,13 +61,14 @@ class CreateNewPet : Fragment() {
                 "male"
             }
         }
-        val petBirthDate = binding.editTextDate
+        var petDatePicker = binding.petDatePicker
         val aboutPet = binding.aboutPetText.text.toString()
+
 
 
         // Upload data to Firestore
         val pet = hashMapOf(
-//            "petImage" to petImage,
+            "petImage" to petImagePreview,
             "petName" to petName,
             "petGender" to petGender,
 //            "petBirthDate" to petBirthDate,
@@ -71,6 +92,16 @@ class CreateNewPet : Fragment() {
 
     }
 
+    private fun launchGallery() {
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+//        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
+    }
+
+
     // timestamp
 
 }
+
+

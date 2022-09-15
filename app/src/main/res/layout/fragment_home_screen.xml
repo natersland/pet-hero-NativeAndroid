@@ -60,10 +60,10 @@
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_pet_list_header"
-        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_bias="0.0"
         tools:itemCount="10"
-        tools:layout_editor_absoluteX="16dp"
-        tools:listitem="@layout/pet_card_view" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:listitem="@layout/view_pet_card" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_pet_button"
