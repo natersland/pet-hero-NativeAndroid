@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'kotlin-parcelize'
+    id("androidx.navigation.safeargs.kotlin")
+
 }
 
 android {
@@ -56,11 +58,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx'
 
     implementation 'com.google.android.gms:play-services-auth:20.3.0'
-    implementation 'com.google.firebase:firebase-auth:21.0.8'
     implementation 'com.google.firebase:firebase-firestore-ktx'
 
-    implementation 'com.google.firebase:firebase-storage-ktx:20.0.2'
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.3.0'
+    implementation 'com.google.firebase:firebase-storage-ktx'
 
 
     /* Jitpack */

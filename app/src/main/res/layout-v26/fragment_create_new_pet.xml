@@ -57,17 +57,17 @@
             android:src="@drawable/corgi"
              />
     </androidx.cardview.widget.CardView>
-    <ImageButton
-        android:id="@+id/upload_image_btn"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/shape_upload_image_button"
-        app:layout_constraintTop_toBottomOf="@+id/pet_photo_show_card"
-        app:layout_constraintStart_toEndOf="@id/pet_photo_show_card"
-        android:layout_marginTop="-32dp"
-        android:layout_marginStart="-24dp"
-        android:src="@drawable/ic_baseline_image_24"
-        android:elevation="16dp"/>
+<!--    <ImageButton-->
+<!--        android:id="@+id/upload_image_btn"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:background="@drawable/shape_upload_image_button"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/pet_photo_show_card"-->
+<!--        app:layout_constraintStart_toEndOf="@id/pet_photo_show_card"-->
+<!--        android:layout_marginTop="-32dp"-->
+<!--        android:layout_marginStart="-24dp"-->
+<!--        android:src="@drawable/ic_baseline_image_24"-->
+<!--        android:elevation="16dp"/>-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/create_new_pet_form"

@@ -33,5 +33,9 @@
         <action
             android:id="@+id/action_createNewPetFragment_to_createNewPetSelectType"
             app:destination="@id/createNewPetSelectType" />
+        <argument
+            android:name="selectedType"
+            app:argType="naters.fantasy.pethero.model.PetType"
+            android:defaultValue="cat" />
     </fragment>
 </navigation>

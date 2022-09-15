@@ -1,6 +1,7 @@
 package naters.fantasy.pethero
 
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -20,42 +21,48 @@ import java.util.*
 
 
 class CreateNewPetFragment : Fragment() {
-
     private val binding: FragmentCreateNewPetBinding by lazy {
         FragmentCreateNewPetBinding.inflate(layoutInflater)
     }
-    val applicationContext = getActivity()?.getApplicationContext()
 
-    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        // header zone
         binding.btnBack?.setOnClickListener{ view:View->
             view.findNavController().navigate(R.id.action_createNewPetFragment_to_createNewPetSelectType)
         }
+        // set image for pet type
+        val petAvatar = binding.petPhotoPreview
+        when(arguments?.getString("petType")){
+            "cat" -> petAvatar?.setImageResource(R.drawable.cool)
+            else -> {
+                petAvatar?.setImageResource(R.drawable.corgi)
+            }
+        }
+
+        // create new pet
         val createNewPetBtn = binding.createNewPetBtn
 
         createNewPetBtn.setOnClickListener {
-            createNewPet()
         }
 
 
         return binding.root
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
+
     private fun createNewPet() {
 
         // Upload Pet Photo
         val petImagePreview = binding.petPhotoPreview
         val btnChooseImage = binding.uploadImageBtn
 
-        btnChooseImage.setOnClickListener{
-            launchGallery()
-        }
+//        btnChooseImage.setOnClickListener{
+//            launchGallery()
+//        }
 
         // Others
         val petName = binding.petNameEditText.text.toString()
