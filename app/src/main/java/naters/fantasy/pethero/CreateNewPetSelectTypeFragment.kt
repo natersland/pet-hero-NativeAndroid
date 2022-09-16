@@ -11,45 +11,40 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import naters.fantasy.pethero.databinding.FragmentCreateNewPetSelectTypeBinding
+import naters.fantasy.pethero.model.PetType
 
 class CreateNewPetSelectTypeFragment : Fragment() {
 
     private val binding: FragmentCreateNewPetSelectTypeBinding by lazy {
         FragmentCreateNewPetSelectTypeBinding.inflate(layoutInflater)
     }
-
-
+    private var selectedType: PetType = PetType.cat
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
+        // header zone
         binding.btnBack.setOnClickListener{view:View->
             view.findNavController().navigate(R.id.action_createNewPetSelectType_to_homeScreenFragment)
         }
-
-        // select pet type
-        var petType = "cat"
         binding.catCard.setOnClickListener{
-            petType = "cat"
-            binding.selectedTypeCat.setVisibility(View.VISIBLE)
-            binding.selectedTypeDog.setVisibility(View.INVISIBLE)
-            Toast.makeText(activity,petType,Toast.LENGTH_SHORT).show()
+            selectedType = PetType.cat
+            binding.selectedTypeCat.visibility = View.VISIBLE
+            binding.selectedTypeDog.visibility = View.INVISIBLE
         }
         binding.dogCard.setOnClickListener{
-            petType = "dog"
-            binding.selectedTypeDog.setVisibility(View.VISIBLE)
-            binding.selectedTypeCat.setVisibility(View.INVISIBLE)
-            Toast.makeText(activity,petType,Toast.LENGTH_SHORT).show()
+            selectedType = PetType.dog
+            binding.selectedTypeDog.visibility = View.VISIBLE
+            binding.selectedTypeCat.visibility = View.INVISIBLE
         }
 
-
+        // Navigate btn to create new pet screen
         binding.createNewPetBtn.setOnClickListener{view:View->
-            val bundle = bundleOf("petType" to petType)
-            view.findNavController().navigate(R.id.createNewPetFragment, bundle)
+            val action = CreateNewPetSelectTypeFragmentDirections.actionCreateNewPetSelectTypeToCreateNewPetFragment(selectedType)
+            view.findNavController().navigate(action)
 
-            view.findNavController().navigate(R.id.action_createNewPetSelectType_to_createNewPetFragment)
         }
 
         return binding.root

@@ -14,7 +14,6 @@ import naters.fantasy.pethero.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    //view binding
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,12 +22,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
-
-
-//        setupView()
-
         // Loading Animation
         /*  findViewById<Button>(R.id.button).setOnClickListener {
               LoadingScreenDialogFragment.getInstance().show(
@@ -36,10 +29,4 @@ class MainActivity : AppCompatActivity() {
               )
          }*/
     }
-
-    private fun setupView() {
-        TODO("Not yet implemented")
-    }
 }
-
-data class Pet(var name: String, var petAge: Int, var humanAge: Int, var petType: String)

@@ -17,7 +17,7 @@ class PetdataViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
 
     init {
         itemView.setOnClickListener{
-            Toast.makeText(itemView.context, "hi $petName.text", Toast.LENGTH_LONG).show()
+            Toast.makeText(itemView.context, "hi $petName.text", Toast.LENGTH_SHORT).show()
         }
     }
 

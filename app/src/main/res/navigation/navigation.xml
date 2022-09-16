@@ -37,5 +37,8 @@
             android:name="selectedType"
             app:argType="naters.fantasy.pethero.model.PetType"
             android:defaultValue="cat" />
+        <action
+            android:id="@+id/action_createNewPetFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
 </navigation>

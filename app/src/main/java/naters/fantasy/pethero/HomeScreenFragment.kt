@@ -29,14 +29,13 @@ class HomeScreenFragment : Fragment() {
 
         // Initialize data.
         val myDataset = Datasource().loadPetLists()
-
         val recyclerView = binding.petRecyclerView
         recyclerView.adapter = ItemAdapter(this, myDataset)
         // Use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true)
 
-        // create new pet
+        // create new pet btn
         binding.addPetButton.setOnClickListener{ view:View ->
             view.findNavController().navigate(R.id.action_homeScreenFragment_to_createNewPetSelectType)
         }
