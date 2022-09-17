@@ -48,10 +48,10 @@ class AuthenticationScreen : Fragment() {
 */
 
         // Google sign-in button
-        binding.googleSignInButton.setOnClickListener{
+    /*    binding.googleSignInButton.setOnClickListener{
             // begin google sign in
             Log.d(TAG, "onCreate: begin Google Sign In")
-        }
+        }*/
 
         return binding.root
     }

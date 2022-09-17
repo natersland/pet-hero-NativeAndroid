@@ -1,52 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/blue_brand"
     tools:context=".CreateAccountScreen">
 
-    <!-- TODO: Update blank fragment layout -->
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="40dp"
+        >
 
+        <Button
+            android:id="@+id/btn_back"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/selector_button_background_borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
-    <EditText
-        android:id="@+id/input_email_box"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/signup_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:text="@string/create_new_account"
+            android:textSize="36sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
 
-    <EditText
-        android:id="@+id/input_password_box"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/signup_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_email_box" />
+        <TextView
+            android:text="@string/fill_data"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
-    <Button
-        android:id="@+id/signup_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/blue_brand"
-        android:padding="8dp"
-        android:text="@string/sign_up_button"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:layout_marginTop="64dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/edit_text_email"
+            android:hint="@string/user_pethero_com"
+            android:textColor="@color/black_brand"
+            android:textColorHint="@color/hard_gray_brand"
+            android:background="@drawable/shape_button_background_gray_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_password"
+            android:hint="@string/password"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black_brand"
+            android:textColorHint="@color/hard_gray_brand"
+            android:background="@drawable/shape_button_background_gray_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edit_text_re_password"
+            android:hint="@string/confirm_password"
+
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black_brand"
+            android:textColorHint="@color/hard_gray_brand"
+            android:background="@drawable/shape_button_background_gray_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:textAllCaps="false"
+            android:id="@+id/btn_create_account"
+            android:text="@string/create_new_account"
+            android:textSize="18sp"
+            android:textColor="@color/black_brand"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/selector_button_background_yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/already_have_an_account"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btn_login"
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:background="@drawable/selector_button_background_borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

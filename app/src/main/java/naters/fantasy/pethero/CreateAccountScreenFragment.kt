@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import naters.fantasy.pethero.databinding.FragmentCreateAccountScreenBinding
 import naters.fantasy.pethero.databinding.FragmentHomeScreenBinding
 
@@ -18,11 +20,13 @@ private const val ARG_PARAM2 = "param2"
 
 class CreateAccountScreen : Fragment() {
     private var mAuth: FirebaseAuth? = null
-    private var currentUser : FirebaseUser? = null
+    private var currentUser: FirebaseUser? = null
 
     private val binding: FragmentCreateAccountScreenBinding by lazy {
         FragmentCreateAccountScreenBinding.inflate(layoutInflater)
     }
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,12 +34,22 @@ class CreateAccountScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding.signupButton.setOnClickListener{
+        // ...
+        // Initialize Firebase Auth
+        auth = Firebase.auth
+
+        val email = binding.editTextEmail
+        val password = binding.editTextPassword
+
+
+        /*binding.signupButton.setOnClickListener{
             val email = binding.inputEmailBox.text.trim()
             val password = binding.inputPasswordBox.text.trim()
 
-        }
+        }*/
         return binding.root
     }
+
+
 
 }
