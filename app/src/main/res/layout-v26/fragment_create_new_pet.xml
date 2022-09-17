@@ -192,7 +192,7 @@
             app:layout_constraintTop_toBottomOf="@id/form_group" />
 
         <EditText
-            android:id="@+id/about_me_edit_text"
+            android:id="@+id/about_pet_edit_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="8dp"

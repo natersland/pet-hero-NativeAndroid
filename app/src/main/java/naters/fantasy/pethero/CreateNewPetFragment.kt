@@ -13,6 +13,7 @@ import androidx.navigation.fragment.navArgs
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import naters.fantasy.pethero.databinding.FragmentCreateNewPetBinding
+import naters.fantasy.pethero.model.PetType
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -22,20 +23,20 @@ class CreateNewPetFragment : Fragment() {
         FragmentCreateNewPetBinding.inflate(layoutInflater)
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         // header zone
         binding.btnBack?.setOnClickListener { view: View ->
             view.findNavController()
                 .navigate(R.id.action_createNewPetFragment_to_createNewPetSelectType)
         }
         // set image for pet type
-        val args: CreateNewPetFragmentArgs by navArgs()
         val petAvatar = binding.petPhotoShow
+        val args: CreateNewPetFragmentArgs by navArgs()
 
         when (args.selectedType.toString()) {
             "cat" -> petAvatar?.setImageResource(R.drawable.cool)
@@ -64,11 +65,9 @@ class CreateNewPetFragment : Fragment() {
             }
 
         }
-
-
         // create new pet feat
         binding.createNewPetBtn.setOnClickListener {
-            createNewPet(view)
+            createNewPet(view, args.selectedType.toString())
 
         }
         return binding.root
@@ -81,9 +80,7 @@ class CreateNewPetFragment : Fragment() {
     }
 
 
-    private fun createNewPet(view: View?) {
-
-        val petImagePreview = binding.petPhotoPreview
+    private fun createNewPet(view: View?, userPetType: String) {
         val petName = binding.petNameEditText.text.toString()
         val petGender = when (binding.genderOptions.checkedRadioButtonId) {
             R.id.option_female -> "female"
@@ -92,17 +89,19 @@ class CreateNewPetFragment : Fragment() {
             }
         }
         val petDatePicker = binding.petDatePicker?.text.toString()
-        val aboutPet = binding.aboutPetText.text.toString()
-        val lovePoint: Int = 0
+        val aboutPet = binding.aboutPetEditText?.text.toString()
+        val lovePoint: Int = (0..100).random()
+        val petType = userPetType
 
 
         // Upload data to Firestore
         val pet = hashMapOf(
             "petName" to petName,
             "petGender" to petGender,
-            "petBirthDate" to petDatePicker,
+            "petBirthDate" to SimpleDateFormat("dd-MM-yyyy").parse(petDatePicker),
             "aboutPet" to aboutPet,
-            "lovePoint" to lovePoint
+            "lovePoint" to lovePoint,
+            "petType" to petType
 
         )
         val db = Firebase.firestore
