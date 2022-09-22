@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -17,47 +18,66 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import naters.fantasy.pethero.databinding.FragmentAuthenticationScreenBinding
 import naters.fantasy.pethero.databinding.FragmentHomeScreenBinding
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class AuthenticationScreen : Fragment() {
 
     private val binding: FragmentAuthenticationScreenBinding by lazy {
         FragmentAuthenticationScreenBinding.inflate(layoutInflater)
     }
-
-   /* // Google Sign-In
-    private lateinit var googleSignInClient: GoogleSignInClient
-    private lateinit var auth: FirebaseAuth*/
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        auth = Firebase.auth
 
-      /*  auth = Firebase.auth
-        //config the Google sign-in
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("547455151198-of1ibdk8vmfktfpnjemo7dk68v290pi7.apps.googleusercontent.com")
-            .requestEmail()
-            .build()
-*/
+    binding.btnRegister.setOnClickListener{
+        it.findNavController().navigate(R.id.action_authenticationScreen_to_createAccountScreen)
 
-        // Google sign-in button
-    /*    binding.googleSignInButton.setOnClickListener{
-            // begin google sign in
-            Log.d(TAG, "onCreate: begin Google Sign In")
-        }*/
+    }
+        binding.btnLogin.setOnClickListener {
+            val email = binding.editTextEmail.text.toString().trim()
+            val password = binding.editTextPassword.text.toString().trim()
 
+            if (email.isEmpty()){
+                Toast.makeText(activity,"กรุณาใส่ E-mail",Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+            if (password.isEmpty()){
+                Toast.makeText(activity,"กรุณาใส่ Password",Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+            activity?.let { it1 ->
+                auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(it1) { task ->
+                        if (task.isSuccessful) {
+                            println("signInWithEmail:success")
+                            reload(it)
+                        } else {
+                            Toast.makeText(activity, "Authentication failed. ${task.exception?.message}",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                    }
+            }
+        }
         return binding.root
     }
 
-    private fun checkUser() {
-        TODO("Not yet implemented")
-    }
+//    public override fun onStart() {
+//        super.onStart()
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        val currentUser = auth.currentUser
+//        if(currentUser != null){
+//            reload()
+//        }
+//    }
+    private fun reload(view: View) {
+//        val it = Intent(activity, HomeScreenFragment::class.java)
+//        startActivity(it)
+    view.findNavController().navigate(R.id.action_authenticationScreen_to_homeScreenFragment)
+
+}
 
 }

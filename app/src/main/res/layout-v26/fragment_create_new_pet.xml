@@ -21,7 +21,7 @@
             android:layout_height="48dp"
             android:layout_gravity="start|center"
             android:layout_marginStart="8dp"
-            android:background="@drawable/shape_button_background_gray_normal"
+            android:background="@drawable/selector_button_background_gray"
             android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
             android:textSize="25sp" />
 
@@ -135,9 +135,10 @@
 
                     <RadioButton
                         android:id="@+id/option_female"
+                        android:button="@null"
+                        android:background="@drawable/selector_select_gender_female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/female"
                         android:textSize="18sp"
                         android:textColor="@color/black_brand"/>
 
@@ -145,7 +146,8 @@
                         android:id="@+id/option_male"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/male"
+                        android:button="@null"
+                        android:background="@drawable/selector_select_gender_male"
                         android:textSize="18sp"
                         android:textColor="@color/black_brand"/>
                 </RadioGroup>

@@ -1,5 +1,6 @@
 package naters.fantasy.pethero
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,6 +19,8 @@ import naters.fantasy.pethero.databinding.FragmentHomeScreenBinding
 import naters.fantasy.pethero.model.PetData
 import naters.fantasy.pethero.model.PetType
 import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.Query
 
 class HomeScreenFragment : Fragment() {
@@ -25,6 +28,7 @@ class HomeScreenFragment : Fragment() {
     private val binding: FragmentHomeScreenBinding by lazy {
         FragmentHomeScreenBinding.inflate(layoutInflater)
     }
+    private lateinit var auth: FirebaseAuth
 
     private val petCollectionRef = Firebase.firestore.collection("pets").orderBy("petName")
     private val recyclerView get() = binding.petRecyclerView
@@ -80,6 +84,7 @@ class HomeScreenFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        auth = Firebase.auth
 
 // Initialize data. (old for mockup)
         /*val myDataset = Datasource().loadPetLists()
@@ -95,18 +100,6 @@ class HomeScreenFragment : Fragment() {
         recyclerView.adapter = PetAdapter(activity,pets)
         recyclerView.setHasFixedSize(true)
 
-
-//        // test get documents
-//        petCollectionRef.get()
-//            .addOnSuccessListener { result ->
-//                for (document in result) {
-//                    println("${document.id} => ${document.data}")
-//                }
-//            }
-//            .addOnFailureListener { exception ->
-//                println("Error getting documents: $exception", )
-//            }
-
         // create new pet btn
         binding.addPetButton.setOnClickListener { view: View ->
             view.findNavController()
@@ -116,5 +109,4 @@ class HomeScreenFragment : Fragment() {
 
         return binding.root
     }
-
 }

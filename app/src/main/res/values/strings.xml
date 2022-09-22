@@ -49,5 +49,6 @@
     <string name="placeholder_age">XX ปี</string>
     <string name="lovepoint_text">ความรัก</string>
     <string name="placeholder_none">-</string>
+    <string name="login_text">เข้าสู่ระบบ</string>
 
 </resources>
