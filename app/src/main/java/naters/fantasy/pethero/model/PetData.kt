@@ -10,9 +10,9 @@ data class PetData(
     val petName: String,
     val petAge: Int,
     val petGender: String,
-    val petBirthDate: String,
+    val petBirthDate: Long,
     val aboutPet: String,
-    val lovePoint: Int,
+    var lovePoint: Int,
 ) : Parcelable, Serializable {
 
     val humanAge get() = petAge.times(2)
