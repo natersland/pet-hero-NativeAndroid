@@ -1,22 +1,21 @@
 package com.example.affirmations.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import naters.fantasy.pethero.HomeScreenFragment
 import naters.fantasy.pethero.R
 import naters.fantasy.pethero.model.PetData
 
 /**
  * Adapter for the [RecyclerView] in [MainActivity]. Displays [Affirmation] data object.
  */
-class ItemAdapter(
-    private val context: HomeScreenFragment,
+class PetAdapter(
+    private val context: FragmentActivity?,
     private val dataset: List<PetData>
-) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+) : RecyclerView.Adapter<PetAdapter.ItemViewHolder>() {
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -24,8 +23,9 @@ class ItemAdapter(
     // Each data item is just an Affirmation object.
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val petName: TextView = view.findViewById(R.id.card_pet_name)
-        val petBirthDate: TextView = view.findViewById(R.id.card_birthday_value)
-        val petHumanAge: TextView = view.findViewById(R.id.card_human_age_value)
+//        val petBirthDate: TextView = view.findViewById(R.id.card_birthday_value)
+//        val petHumanAge: TextView = view.findViewById(R.id.card_human_age_value)
+
     }
 
     /**
@@ -46,8 +46,8 @@ class ItemAdapter(
         val item = dataset[position]
 
         holder.petName.text = item.petName
-        holder.petBirthDate.text = item.petBirthDate
-        holder.petHumanAge.text = "60"
+//        holder.petBirthDate.text = item.petBirthDate
+//        holder.petHumanAge.text = "${item.humanAge}"
     }
 
     /**

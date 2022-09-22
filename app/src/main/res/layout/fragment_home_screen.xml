@@ -30,9 +30,8 @@
             android:hint="@string/find_pet"
             android:inputType="textPersonName"
             android:padding="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.054"
             tools:layout_editor_absoluteX="-27dp" />
 
     </LinearLayout>
@@ -58,11 +57,9 @@
         android:orientation="vertical"
         android:scrollbars="vertical"
         app:layoutManager="LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_pet_list_header"
-        app:layout_constraintVertical_bias="0.0"
         tools:itemCount="10"
-        tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/view_pet_card" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
