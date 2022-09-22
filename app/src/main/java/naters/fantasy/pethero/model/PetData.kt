@@ -1,20 +1,21 @@
 package naters.fantasy.pethero.model
 
-import android.os.Parcel
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import java.io.Serializable
 
 @Parcelize
 data class PetData(
-    val id: Int?,
     val petType: PetType,
-    val petName: String?,
+    val petName: String,
+    val petAge: Int,
+    val petGender: String,
     val petBirthDate: String,
-    val petAge: Double,
-    val petGender: String?
-) : Parcelable {
-    val humanAge get() = petAge * 2
+    val aboutPet: String,
+    val lovePoint: Int,
+) : Parcelable, Serializable {
+
+    val humanAge get() = petAge.times(2)
 }
 
 enum class PetType {

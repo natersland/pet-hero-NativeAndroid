@@ -8,13 +8,20 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import naters.fantasy.pethero.databinding.ActivityMainBinding
+import naters.fantasy.pethero.model.PetData
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -28,5 +35,5 @@ class MainActivity : AppCompatActivity() {
                   supportFragmentManager, "Loading"
               )
          }*/
-    }
-}
+
+}}

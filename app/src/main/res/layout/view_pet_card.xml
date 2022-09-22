@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal">
 
     <androidx.cardview.widget.CardView
@@ -18,9 +18,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:cardElevation="10dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+
+            >
 
             <ImageView
                 android:id="@+id/card_pet_avatar"
@@ -28,15 +32,12 @@
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 android:padding="16dp"
                 tools:srcCompat="@drawable/cool" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:orientation="vertical"
                 app:layout_constraintStart_toEndOf="@id/card_pet_avatar"
                 app:layout_constraintTop_toTopOf="parent"
@@ -47,16 +48,17 @@
                         android:id="@+id/card_pet_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:layout_constraintHorizontal_weight="1"
                         android:ellipsize="end"
                         android:fontFamily="@font/kanit_md"
-                        android:maxLines="1"
+                        android:maxLines="2"
                         android:text="@string/pet_name"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:text="วิสกัส" />
-
+                        app:layout_constraintEnd_toStartOf="@id/card_pet_gender"
+                        tools:text="ลูกชิ้น" />
                     <ImageView
                         android:id="@+id/card_pet_gender"
                         android:layout_width="wrap_content"
@@ -156,9 +158,9 @@
                     android:textSize="15sp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
