@@ -12,6 +12,10 @@
         <action
             android:id="@+id/action_homeScreenFragment_to_createNewPetSelectType"
             app:destination="@id/createNewPetSelectType" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_petDetailFragment3"
+            app:destination="@id/petDetailFragment3" />
+
     </fragment>
     <fragment
         android:id="@+id/createNewPetSelectType"
@@ -40,5 +44,17 @@
         <action
             android:id="@+id/action_createNewPetFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/petDetailFragment3"
+        android:name="naters.fantasy.pethero.PetDetailFragment"
+        android:label="fragment_pet_detail"
+        tools:layout="@layout/fragment_pet_detail" >
+        <action
+            android:id="@+id/action_petDetailFragment3_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <argument
+            android:name="petData"
+            app:argType="naters.fantasy.pethero.model.PetData" />
     </fragment>
 </navigation>

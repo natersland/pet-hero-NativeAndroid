@@ -67,10 +67,6 @@ class HomeScreenFragment : Fragment() {
                 .addOnFailureListener { exception ->
                     println("Error getting documents: $exception")
                 }
-            withContext(Dispatchers.Main) {
-                Toast.makeText(activity, "โหลดสัตว์เลี้ยงเรียบร้อย!", Toast.LENGTH_SHORT)
-                    .show()
-            }
 
         } catch (e: Exception) {
             withContext(Dispatchers.Main) {

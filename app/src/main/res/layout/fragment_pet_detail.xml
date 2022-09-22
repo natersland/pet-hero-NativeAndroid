@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/pet_picture"
             android:layout_width="wrap_content"
             android:layout_height="300dp"
             android:src="@drawable/dog_1"
@@ -126,6 +126,7 @@
             android:src="@drawable/ic_baseline_favorite_24_gray" />
     </LinearLayout>
     <ImageView
+        android:id="@+id/ic_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/sex_male"
@@ -155,7 +156,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="24dp">
+                android:padding="24dp"
+                android:layout_gravity="center">
 
                 <TextView
                     android:id="@+id/tv_age_text"
@@ -197,6 +199,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:padding="24dp"
                 >
 
@@ -238,10 +241,10 @@
             android:layout_margin="4dp"
 
             >
-            <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:padding="24dp"
                 >
 
@@ -300,7 +303,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/placeholder_none"
-            android:textColor="@color/hard_gray_brand"
+            android:textColor="@color/black_brand"
             android:textSize="20sp"
             />
     </ScrollView>

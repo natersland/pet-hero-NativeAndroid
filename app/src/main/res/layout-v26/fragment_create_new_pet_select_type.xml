@@ -10,7 +10,6 @@
         android:id="@+id/create_new_pet_header"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:sty="@drawable/shape_header_bar"
         android:backgroundTint="@color/blue_brand"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
