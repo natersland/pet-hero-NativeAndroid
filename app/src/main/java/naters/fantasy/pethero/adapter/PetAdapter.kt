@@ -1,15 +1,14 @@
 package com.example.affirmations.adapter
 
-import android.graphics.PorterDuff
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import naters.fantasy.pethero.R
+import naters.fantasy.pethero.*
 import naters.fantasy.pethero.model.PetData
 import naters.fantasy.pethero.model.PetType
 import java.security.AccessController.getContext
@@ -50,10 +49,10 @@ class PetAdapter(
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         // create a new view
-        val adapterLayout = LayoutInflater.from(parent.context)
+        val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.view_pet_card, parent, false)
 
-        return ItemViewHolder(adapterLayout)
+        return ItemViewHolder(itemView)
     }
 
     /**
@@ -84,10 +83,7 @@ class PetAdapter(
         var age = myCalendar.get(Calendar.YEAR) - dob.get(Calendar.YEAR)
         holder.petBirthDate.text = "${sdf.format(dob.time)} ($age ปี)"
 
-        // set human age
-        fun log2(n: Int): Double {
-            return ln(n.toDouble()) / ln(2.0)
-        }
+
         holder.petHumanAge.text = when(item.petType){
             PetType.dog -> {
                 when(age){
@@ -103,41 +99,54 @@ class PetAdapter(
                 }
             }
         }
-//        ({
-//            when(age){
-//                in 0..5 -> ((age * 19)/3)+1
-//                else -> ((age-6)*4)+40
-//            }
-//        }).toString()
-        // Set hearts icon
-        if (item.lovePoint in 10..19){
-            holder.heart1.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-        } else if(item.lovePoint in 20..29){
-            holder.heart1.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart2.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-        } else if(item.lovePoint in 30..39){
-            holder.heart1.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart2.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart3.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-        } else if(item.lovePoint in 40..49){
-            holder.heart1.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart2.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart3.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart4.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-        } else if(item.lovePoint in 50..59){
-            holder.heart1.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart2.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart3.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart4.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart5.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-        } else if(item.lovePoint >= 60){
-            holder.heart1.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart2.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart3.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart4.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart5.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
-            holder.heart6.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
+
+        holder.itemView.setOnClickListener{
+            val petType = item.petType
+            val petName = item.petName
+            val petAge = age
+            val petGender = item.petGender
+            val petBirthDate = item.petBirthDate
+            val aboutPet = item.aboutPet
+            val lovePoint = item.lovePoint
+            val petData = PetData(petType,petName,petAge,petGender,petBirthDate,aboutPet,lovePoint)
+
+            val action = HomeScreenFragmentDirections.actionHomeScreenFragmentToPetDetailFragment3(petData)
+            it.findNavController().navigate(action)//            val intent = Intent(holder.itemView.context,PetDetailFragment::class.java)
+//            intent.putExtra("petName",item.petName)
+//            intent.putExtra("petType",item.petType)
+//            intent.putExtra("lovePoint",item.lovePoint)
+//            intent.putExtra("petGender",item.petGender)
+//            intent.putExtra("petAge",holder.petBirthDate.text)
+//            intent.putExtra("humanAge",holder.petHumanAge.text)
+//            intent.putExtra("lovePoint",item.lovePoint)
+//            intent.putExtra("aboutPet",item.aboutPet)
+//            holder.itemView.context.startActivity(intent)
         }
+
+        holder.heart1.setImageResource(when(item.lovePoint){
+            in 0..9 -> R.drawable.ic_baseline_favorite_24_gray
+            else -> R.drawable.ic_baseline_favorite_24_pink
+        })
+        holder.heart2.setImageResource(when(item.lovePoint){
+            in 0..19 -> R.drawable.ic_baseline_favorite_24_gray
+            else -> R.drawable.ic_baseline_favorite_24_pink
+        })
+        holder.heart3.setImageResource(when(item.lovePoint){
+            in 0..29 -> R.drawable.ic_baseline_favorite_24_gray
+            else -> R.drawable.ic_baseline_favorite_24_pink
+        })
+        holder.heart4.setImageResource(when(item.lovePoint){
+            in 0..39 -> R.drawable.ic_baseline_favorite_24_gray
+            else -> R.drawable.ic_baseline_favorite_24_pink
+        })
+        holder.heart5.setImageResource(when(item.lovePoint){
+            in 0..49 -> R.drawable.ic_baseline_favorite_24_gray
+            else -> R.drawable.ic_baseline_favorite_24_pink
+        })
+        holder.heart6.setImageResource(when(item.lovePoint){
+            in 0..59 -> R.drawable.ic_baseline_favorite_24_gray
+            else -> R.drawable.ic_baseline_favorite_24_pink
+        })
 
     }
 
@@ -146,3 +155,5 @@ class PetAdapter(
      */
     override fun getItemCount() = dataset.size
 }
+
+

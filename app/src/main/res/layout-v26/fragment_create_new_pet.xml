@@ -98,7 +98,8 @@
             android:layout_marginTop="8dp"
             android:maxLength="15"
             android:background="@drawable/shape_button_background_gray_normal"
-            android:hint="ฟักทอง"
+            android:hint="รีฮันน่า"
+            android:textColorHint="@color/hard_gray_brand"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/create_pet_name"
             app:layout_constraintTop_toBottomOf="@id/create_pet_name" />
@@ -202,6 +203,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:hint="เวลาว่างชอบดูโดเรม่อน"
+            android:textColorHint="@color/hard_gray_brand"
             app:layout_constraintTop_toBottomOf="@id/about_pet_text" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
