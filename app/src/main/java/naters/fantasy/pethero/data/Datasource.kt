@@ -9,9 +9,9 @@ class Datasource {
         val rv_dataLists = mutableListOf<PetData>()
 
         return listOf<PetData>(
-        PetData(1,PetType.cat,"Sunny","09/11/2019", 3.0,"female"),
-        PetData(2,PetType.cat,"09/11/2019", "09/11/2019",40.0,"female"),
-        PetData(3,PetType.dog,"09/11/2019", "09/11/2019",40.0,"male")
+//        PetData(1,PetType.cat,"Sunny","09/11/2019", 3.0,"female"),
+//        PetData(2,PetType.cat,"09/11/2019", "09/11/2019",40.0,"female"),
+//        PetData(3,PetType.dog,"09/11/2019", "09/11/2019",40.0,"male")
         )
     }
 }
