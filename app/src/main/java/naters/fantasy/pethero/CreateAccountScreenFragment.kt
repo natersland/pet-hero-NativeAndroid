@@ -83,18 +83,8 @@ class CreateAccountScreen : Fragment() {
 
         return binding.root
     }
-//    public override fun onStart() {
-//        super.onStart()
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        val currentUser = auth.currentUser
-//        if(currentUser != null){
-////            reload(it)
-//        }
-//    }
 
     private fun reload(view: View) {
-//        val it = Intent(activity, HomeScreenFragment::class.java)
-//        startActivity(it)
         view.findNavController().navigate(R.id.action_createAccountScreen_to_homeScreenFragment)
     }
 

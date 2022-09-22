@@ -100,18 +100,6 @@ class HomeScreenFragment : Fragment() {
         recyclerView.adapter = PetAdapter(activity,pets)
         recyclerView.setHasFixedSize(true)
 
-
-//        // test get documents
-//        petCollectionRef.get()
-//            .addOnSuccessListener { result ->
-//                for (document in result) {
-//                    println("${document.id} => ${document.data}")
-//                }
-//            }
-//            .addOnFailureListener { exception ->
-//                println("Error getting documents: $exception", )
-//            }
-
         // create new pet btn
         binding.addPetButton.setOnClickListener { view: View ->
             view.findNavController()
@@ -121,16 +109,4 @@ class HomeScreenFragment : Fragment() {
 
         return binding.root
     }
-//    public override fun onStart() {
-//        super.onStart()
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        val currentUser = auth.currentUser
-//        if(currentUser != null){
-//            reload()
-//        }
-//    }
-//    private fun reload() {
-//        val it = Intent(activity, HomeScreenFragment::class.java)
-//        startActivity(it)
-//    }
 }

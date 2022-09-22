@@ -18,12 +18,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import naters.fantasy.pethero.databinding.FragmentAuthenticationScreenBinding
 import naters.fantasy.pethero.databinding.FragmentHomeScreenBinding
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class AuthenticationScreen : Fragment() {
 
     private val binding: FragmentAuthenticationScreenBinding by lazy {
@@ -59,11 +53,9 @@ class AuthenticationScreen : Fragment() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(it1) { task ->
                         if (task.isSuccessful) {
-                            // Sign in success, update UI with the signed-in user's information
                             println("signInWithEmail:success")
                             reload(it)
                         } else {
-                            // If sign in fails, display a message to the user.
                             Toast.makeText(activity, "Authentication failed. ${task.exception?.message}",
                                 Toast.LENGTH_SHORT).show()
                         }
