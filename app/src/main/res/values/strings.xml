@@ -1,3 +1,47 @@
 <resources>
     <string name="app_name">Pet Hero</string>
+    <string name="back">ย้อนกลับ</string>
+    <string name="register_text">สมัครสมาชิกใหม่</string>
+    <string name="register_text_detail">กรุณากรอกข้อมูลให้ครบถ้วน</string>
+    <string name="user_pethero_com">user@pethero.com</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account">มีบัญชีอยู่แล้ว?</string>
+    <string name="login">Login</string>
+    <string name="register">สมัครสมาชิก</string>
+    <string name="dont_have_an_account">ยังไม่มีบัญชี?</string>
+    <string name="e_mail">E-Mail</string>
+    <string name="Login_th">เข้าสู่ระบบ</string>
+    <string name="add_new_pet">เพิ่มสัตว์เลี้ยงใหม่</string>
+    <string name="find_pet">ค้นหาสัตว์เลี้ยง</string>
+    <string name="my_pet">สัตว์เลี้ยงของฉัน</string>
+    <string name="create_new_account">สร้างบัญชีใหม่</string>
+    <string name="fill_data">กรุณากรอกข้อมูลให้ครบถ้วน</string>
+    <string name="title_activity_create_account_screen">test</string>
+    <string name="to_human_age">อายุคน:</string>
+    <string name="dd_mm_yyyy_x">DD/MM/YYYY (x ปี)</string>
+    <string name="pet_name">ชื่อสัตว์เลี้ยง</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="create_new_account_q">ยังไม่มีบัญชี?</string>
+    <string name="create_new_pet">สร้างสัตว์เลี้ยง</string>
+    <string name="back_btn"><![CDATA[<]]></string>
+    <string name="gender">เพศ</string>
+    <string name="birthday_text">วันเกิด</string>
+    <string name="female">หญิง</string>
+    <string name="male">ชาย</string>
+    <string name="about_me">เกี่ยวกับฉัน</string>
+    <string name="select_pet_type">ต้องการเพิ่ม?</string>
+    <string name="next_btn">ถัดไป</string>
+    <string name="cat">แมว</string>
+    <string name="dog">สุนัข</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
