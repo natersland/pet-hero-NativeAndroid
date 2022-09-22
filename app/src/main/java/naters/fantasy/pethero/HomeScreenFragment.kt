@@ -18,6 +18,7 @@ import naters.fantasy.pethero.databinding.FragmentHomeScreenBinding
 import naters.fantasy.pethero.model.PetData
 import naters.fantasy.pethero.model.PetType
 import com.google.firebase.Timestamp
+import com.google.firebase.firestore.Query
 
 class HomeScreenFragment : Fragment() {
 
@@ -66,10 +67,6 @@ class HomeScreenFragment : Fragment() {
                 .addOnFailureListener { exception ->
                     println("Error getting documents: $exception")
                 }
-            withContext(Dispatchers.Main) {
-                Toast.makeText(activity, "โหลดสัตว์เลี้ยงเรียบร้อย!", Toast.LENGTH_SHORT)
-                    .show()
-            }
 
         } catch (e: Exception) {
             withContext(Dispatchers.Main) {

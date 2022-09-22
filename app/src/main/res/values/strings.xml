@@ -43,5 +43,11 @@
     <string name="dog">สุนัข</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pet_type">ประเภทสัตว์เลี้ยง</string>
+    <string name="age">อายุ</string>
+    <string name="human_age">อายุคน</string>
+    <string name="placeholder_age">XX ปี</string>
+    <string name="lovepoint_text">ความรัก</string>
+    <string name="placeholder_none">-</string>
 
 </resources>
