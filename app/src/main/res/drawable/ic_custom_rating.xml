@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/background"
-        android:drawable="@drawable/ic_baseline_favorite_24_gray"/>
-    <item
-        android:id="@+id/progress"
-        android:drawable="@drawable/ic_baseline_favorite_24_pink" />
-</layer-list>

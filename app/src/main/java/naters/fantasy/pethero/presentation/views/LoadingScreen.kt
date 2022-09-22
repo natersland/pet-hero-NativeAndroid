@@ -7,10 +7,10 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
-import naters.fantasy.pethero.databinding.AnimationLoadingScreenPawBinding
+import naters.fantasy.pethero.databinding.LoadingScreenPawAnimationBinding
 
 class LoadingScreenDialogFragment: DialogFragment() {
-    private lateinit var binding: AnimationLoadingScreenPawBinding
+    private lateinit var binding: LoadingScreenPawAnimationBinding
 
 
     private fun showFullScreen() {
@@ -38,7 +38,7 @@ class LoadingScreenDialogFragment: DialogFragment() {
         return Dialog(requireActivity()).apply {
             val inflater = requireActivity().layoutInflater
             requestWindowFeature(Window.FEATURE_NO_TITLE)
-            binding = AnimationLoadingScreenPawBinding.inflate(inflater, null, false)
+            binding = LoadingScreenPawAnimationBinding.inflate(inflater, null, false)
             setContentView(binding.root)
             window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         }
