@@ -17,6 +17,7 @@ import kotlinx.coroutines.withContext
 import naters.fantasy.pethero.databinding.FragmentHomeScreenBinding
 import naters.fantasy.pethero.model.PetData
 import naters.fantasy.pethero.model.PetType
+import com.google.firebase.Timestamp
 
 class HomeScreenFragment : Fragment() {
 
@@ -24,7 +25,7 @@ class HomeScreenFragment : Fragment() {
         FragmentHomeScreenBinding.inflate(layoutInflater)
     }
 
-    private val petCollectionRef = Firebase.firestore.collection("pets")
+    private val petCollectionRef = Firebase.firestore.collection("pets").orderBy("petName")
     private val recyclerView get() = binding.petRecyclerView
 
     private var pets: MutableList<PetData> = mutableListOf()
@@ -39,7 +40,7 @@ class HomeScreenFragment : Fragment() {
                         val petType = document.data["petType"]?.toString()
                         val petName = document.data["petName"]?.toString()
                         val petGender = document.data["petGender"].toString()
-                        val petBirthDate = document.data["petBirthDate"].toString()
+                        val petBirthDate = document.data["petBirthDate"] as Timestamp
                         val aboutPet = document.data["aboutPet"].toString()
                         val lovePoint = document.data["lovePoint"].toString().toInt()
                         val pet = PetData(
@@ -51,12 +52,13 @@ class HomeScreenFragment : Fragment() {
                             petName = petName ?: "",
                             petAge = 0,
                             petGender = petGender,
-                            petBirthDate = petBirthDate,
+                            petBirthDate = petBirthDate.seconds * 1000L,
                             aboutPet = aboutPet,
                             lovePoint = lovePoint,
                         )
                         pets.add(pet)
                         println("testfantasy $pet")
+                        println("HBD $petBirthDate")
                     }
                     recyclerView.adapter?.notifyDataSetChanged()
 
