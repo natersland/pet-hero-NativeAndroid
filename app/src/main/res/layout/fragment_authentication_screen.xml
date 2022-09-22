@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_brand"
+    tools:context=".AuthenticationScreen">
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="40dp"
+        >
+
+        <Button
+            android:id="@+id/btn_back"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/selector_button_background_borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:text="@string/Login_th"
+            android:textSize="36sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/edit_text_email"
+            android:hint="@string/user_pethero_com"
+            android:textColor="@color/black_brand"
+            android:textColorHint="@color/hard_gray_brand"
+            android:background="@drawable/shape_button_background_gray_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_password"
+            android:hint="@string/password"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black_brand"
+            android:textColorHint="@color/hard_gray_brand"
+            android:background="@drawable/shape_button_background_gray_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <Button
+            android:textAllCaps="false"
+            android:id="@+id/btn_create_account"
+            android:text="@string/create_new_account"
+            android:textSize="18sp"
+            android:textColor="@color/black_brand"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/selector_button_background_yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:text="@string/create_new_account_q"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btn_register"
+                android:text="@string/create_new_account"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:background="@drawable/selector_button_background_borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>
