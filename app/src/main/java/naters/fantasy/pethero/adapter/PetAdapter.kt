@@ -103,13 +103,7 @@ class PetAdapter(
                 }
             }
         }
-//        ({
-//            when(age){
-//                in 0..5 -> ((age * 19)/3)+1
-//                else -> ((age-6)*4)+40
-//            }
-//        }).toString()
-        // Set hearts icon
+//
         if (item.lovePoint in 10..19){
             holder.heart1.setImageResource(R.drawable.ic_baseline_favorite_24_pink)
         } else if(item.lovePoint in 20..29){

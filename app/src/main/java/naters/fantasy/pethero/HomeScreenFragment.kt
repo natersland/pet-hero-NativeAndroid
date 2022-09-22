@@ -18,6 +18,7 @@ import naters.fantasy.pethero.databinding.FragmentHomeScreenBinding
 import naters.fantasy.pethero.model.PetData
 import naters.fantasy.pethero.model.PetType
 import com.google.firebase.Timestamp
+import com.google.firebase.firestore.Query
 
 class HomeScreenFragment : Fragment() {
 
