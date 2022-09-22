@@ -1,5 +1,6 @@
 package naters.fantasy.pethero
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,6 +19,8 @@ import naters.fantasy.pethero.databinding.FragmentHomeScreenBinding
 import naters.fantasy.pethero.model.PetData
 import naters.fantasy.pethero.model.PetType
 import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.Query
 
 class HomeScreenFragment : Fragment() {
@@ -25,6 +28,7 @@ class HomeScreenFragment : Fragment() {
     private val binding: FragmentHomeScreenBinding by lazy {
         FragmentHomeScreenBinding.inflate(layoutInflater)
     }
+    private lateinit var auth: FirebaseAuth
 
     private val petCollectionRef = Firebase.firestore.collection("pets").orderBy("petName")
     private val recyclerView get() = binding.petRecyclerView
@@ -80,6 +84,7 @@ class HomeScreenFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        auth = Firebase.auth
 
 // Initialize data. (old for mockup)
         /*val myDataset = Datasource().loadPetLists()
@@ -116,5 +121,16 @@ class HomeScreenFragment : Fragment() {
 
         return binding.root
     }
-
+//    public override fun onStart() {
+//        super.onStart()
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        val currentUser = auth.currentUser
+//        if(currentUser != null){
+//            reload()
+//        }
+//    }
+//    private fun reload() {
+//        val it = Intent(activity, HomeScreenFragment::class.java)
+//        startActivity(it)
+//    }
 }

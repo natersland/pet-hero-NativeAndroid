@@ -66,12 +66,13 @@
             android:textColorHint="@color/hard_gray_brand"
             android:background="@drawable/shape_button_background_gray_normal"
             android:layout_width="match_parent"
+            android:inputType="textPassword"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/edit_text_re_password"
             android:hint="@string/confirm_password"
-
+            android:inputType="textPassword"
             android:layout_marginTop="20dp"
             android:textColor="@color/black_brand"
             android:textColorHint="@color/hard_gray_brand"

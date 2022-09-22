@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/homeScreenFragment">
+    app:startDestination="@id/authenticationScreen">
     <fragment
         android:id="@+id/homeScreenFragment"
         android:name="naters.fantasy.pethero.HomeScreenFragment"
@@ -56,5 +56,29 @@
         <argument
             android:name="petData"
             app:argType="naters.fantasy.pethero.model.PetData" />
+    </fragment>
+    <fragment
+        android:id="@+id/authenticationScreen"
+        android:name="naters.fantasy.pethero.AuthenticationScreen"
+        android:label="fragment_authentication_screen"
+        tools:layout="@layout/fragment_authentication_screen" >
+        <action
+            android:id="@+id/action_authenticationScreen_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_authenticationScreen_to_createAccountScreen"
+            app:destination="@id/createAccountScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountScreen"
+        android:name="naters.fantasy.pethero.CreateAccountScreen"
+        android:label="fragment_create_account_screen"
+        tools:layout="@layout/fragment_create_account_screen" >
+        <action
+            android:id="@+id/action_createAccountScreen_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_createAccountScreen_to_authenticationScreen"
+            app:destination="@id/authenticationScreen" />
     </fragment>
 </navigation>
