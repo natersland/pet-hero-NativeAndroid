@@ -84,21 +84,7 @@ class PetAdapter(
         holder.petBirthDate.text = "${sdf.format(dob.time)} ($age ปี)"
 
 
-        holder.petHumanAge.text = when(item.petType){
-            PetType.dog -> {
-                when(age){
-                    0 -> "อายุคน: น้อยกว่า 31 ปี"
-                    else -> "อายุคน: ${Math.round((16 * ln(age.toDouble())) + 31)} ปี"
-                }
-            }
-            else -> {
-                when(age){
-                    0 -> "อายุคน: น้อยกว่า 18 ปี"
-                    in 1..5 -> "อายุคน: ${((age * 19)/3)+1} ปี"
-                    else -> "อายุคน: ${((age-6)*4)+40} ปี"
-                }
-            }
-        }
+        holder.petHumanAge.text = item.humanAge
 
         holder.itemView.setOnClickListener{
             val petType = item.petType
@@ -108,19 +94,11 @@ class PetAdapter(
             val petBirthDate = item.petBirthDate
             val aboutPet = item.aboutPet
             val lovePoint = item.lovePoint
-            val petData = PetData(petType,petName,petAge,petGender,petBirthDate,aboutPet,lovePoint)
+            val humanAge = item.humanAge
 
+            val petData = PetData(petType,petName,petAge,petGender,petBirthDate,aboutPet,lovePoint,humanAge)
             val action = HomeScreenFragmentDirections.actionHomeScreenFragmentToPetDetailFragment3(petData)
-            it.findNavController().navigate(action)//            val intent = Intent(holder.itemView.context,PetDetailFragment::class.java)
-//            intent.putExtra("petName",item.petName)
-//            intent.putExtra("petType",item.petType)
-//            intent.putExtra("lovePoint",item.lovePoint)
-//            intent.putExtra("petGender",item.petGender)
-//            intent.putExtra("petAge",holder.petBirthDate.text)
-//            intent.putExtra("humanAge",holder.petHumanAge.text)
-//            intent.putExtra("lovePoint",item.lovePoint)
-//            intent.putExtra("aboutPet",item.aboutPet)
-//            holder.itemView.context.startActivity(intent)
+            it.findNavController().navigate(action)
         }
 
         holder.heart1.setImageResource(when(item.lovePoint){
