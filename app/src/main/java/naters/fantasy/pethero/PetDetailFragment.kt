@@ -42,7 +42,7 @@ class PetDetailFragment : Fragment() {
             else -> "สุนัข (Dog)"
         }
         binding.tvAgeValue.text = args.petData.petAge.toString()
-        binding.tvHumanAgeValue.text = args.petData.humanAge.toString()
+        binding.tvHumanAgeValue.text = "0"
         binding.tvLovePointValue.text = args.petData.lovePoint.toString()
         binding.tvAboutMeValue.text = when(args.petData.aboutPet){
             "" -> "-"

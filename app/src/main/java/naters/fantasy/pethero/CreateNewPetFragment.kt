@@ -111,9 +111,9 @@ class CreateNewPetFragment : Fragment() {
             val petCollectionRef = Firebase.firestore.collection("pets")
 
             try {
-                if (petName == "" ||
-                    petGender == "" ||
-                    petDatePicker == ""
+                if (petName.isEmpty()||
+                    petGender.isEmpty() ||
+                    petDatePicker.isEmpty()
                 ) {
 
                     withContext(Dispatchers.Main) {
@@ -143,9 +143,9 @@ class CreateNewPetFragment : Fragment() {
 
 
             } catch (e: Exception) {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(activity, e.message, Toast.LENGTH_LONG).show()
-                }
+//                withContext(Dispatchers.Main) {
+//                    Toast.makeText(activity, e.message, Toast.LENGTH_LONG).show()
+//                }
 
             }
 

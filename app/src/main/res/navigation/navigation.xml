@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/authenticationScreen">
+    app:startDestination="@id/splashScreenFragment">
     <fragment
         android:id="@+id/homeScreenFragment"
         android:name="naters.fantasy.pethero.HomeScreenFragment"
@@ -56,6 +56,10 @@
         <argument
             android:name="petData"
             app:argType="naters.fantasy.pethero.model.PetData" />
+        <argument
+            android:name="humanAgeData"
+            app:argType="string"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/authenticationScreen"
@@ -79,6 +83,15 @@
             app:destination="@id/homeScreenFragment" />
         <action
             android:id="@+id/action_createAccountScreen_to_authenticationScreen"
+            app:destination="@id/authenticationScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="naters.fantasy.pethero.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_authenticationScreen"
             app:destination="@id/authenticationScreen" />
     </fragment>
 </navigation>

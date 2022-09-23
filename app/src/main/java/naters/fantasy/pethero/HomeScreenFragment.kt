@@ -59,8 +59,7 @@ class HomeScreenFragment : Fragment() {
                             petGender = petGender,
                             petBirthDate = petBirthDate.seconds * 1000L,
                             aboutPet = aboutPet,
-                            lovePoint = lovePoint,
-                        )
+                            lovePoint = lovePoint,)
                         pets.add(pet)
                         println("testfantasy $pet")
                         println("HBD $petBirthDate")
