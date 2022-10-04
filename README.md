@@ -44,7 +44,7 @@ Feature
 ## Developer
 🐳Akira Chenyavanij (Nut)
 - UX & UI Design
-- Mobile Development (Android)
+- Mobile Development (Android) with Clean architecture
 - Firestore Database & Authentication
 - Work with agile system in Jira
 
