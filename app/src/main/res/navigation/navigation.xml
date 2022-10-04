@@ -6,7 +6,7 @@
     app:startDestination="@id/splashScreenFragment">
     <fragment
         android:id="@+id/homeScreenFragment"
-        android:name="naters.fantasy.pethero.HomeScreenFragment"
+        android:name="naters.fantasy.pethero.lagacy.HomeScreenFragment"
         android:label="fragment_home_screen"
         tools:layout="@layout/fragment_home_screen" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/createNewPetSelectType"
-        android:name="naters.fantasy.pethero.CreateNewPetSelectTypeFragment"
+        android:name="naters.fantasy.pethero.presentation.views.pets.CreateNewPetSelectTypeFragment"
         android:label="fragment_create_new_pet_select_type"
         tools:layout="@layout/fragment_create_new_pet_select_type" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/createNewPetFragment"
-        android:name="naters.fantasy.pethero.CreateNewPetFragment"
+        android:name="naters.fantasy.pethero.presentation.views.pets.CreateNewPetFragment"
         android:label="fragment_create_new_pet"
         tools:layout="@layout/fragment_create_new_pet" >
         <action
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/petDetailFragment3"
-        android:name="naters.fantasy.pethero.PetDetailFragment"
+        android:name="naters.fantasy.pethero.presentation.views.pets.PetDetailFragment"
         android:label="fragment_pet_detail"
         tools:layout="@layout/fragment_pet_detail" >
         <action
@@ -87,11 +87,15 @@
     </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="naters.fantasy.pethero.SplashScreenFragment"
+        android:name="naters.fantasy.pethero.presentation.views.splash.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
             android:id="@+id/action_splashScreenFragment_to_authenticationScreen"
             app:destination="@id/authenticationScreen" />
     </fragment>
+    <activity
+        android:id="@+id/editPet"
+        android:name="naters.fantasy.pethero.pages.EditPet"
+        android:label="EditPet" />
 </navigation>

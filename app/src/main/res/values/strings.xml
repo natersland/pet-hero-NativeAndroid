@@ -50,5 +50,9 @@
     <string name="lovepoint_text">ความรัก</string>
     <string name="placeholder_none">-</string>
     <string name="login_text">เข้าสู่ระบบ</string>
+    <string name="title_activity_edit_pet">EditPet</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_app_bar_create_edit">AppBar_Create_Edit</string>
+    <string name="title_activity_home_screen_page">HomeScreenPage</string>
 
 </resources>

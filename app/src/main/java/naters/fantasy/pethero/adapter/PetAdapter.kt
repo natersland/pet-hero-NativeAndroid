@@ -11,13 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import naters.fantasy.pethero.*
 import naters.fantasy.pethero.model.PetData
 import naters.fantasy.pethero.model.PetType
-import java.security.AccessController.getContext
+import naters.fantasy.pethero.lagacy.HomeScreenFragmentDirections
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.math.ln
 
 /**
- * Adapter for the [RecyclerView] in [MainActivity]. Displays [Affirmation] data object.
+ * Adapter for the [RecyclerView] in [MainActivityXML]. Displays [Affirmation] data object.
  */
 class PetAdapter(
     private val context: FragmentActivity?,
