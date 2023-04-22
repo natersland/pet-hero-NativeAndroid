@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">Pet Hero (Android)</h1>
 
-> **Current version: 1.0 - Droped (change to developer new project <a href="https://github.com/natersland/catquest-flutter">Cat Quest (Flutter)</a>)**
+> **Current version: 1.0 - Droped (change to develope new project <a href="https://github.com/natersland/catquest-flutter">Cat Quest (Flutter)</a>)**
 
 Pet Hero เป็นแอพที่เข้ามาแก้ปัญหาที่คนยุคใหม่อาจจะไม่มีเวลาดูแลสัตว์เลี้ยง หรือมือใหม่ที่ไม่รู้จะดูแลสัตว์เลี้ยงที่น่ารักยังไง ทำให้การดูแลสัตว์เลี้ยงง่ายดาย และสนุกมากขึ้น 
 โดย Pet Hero จะให้คุณสวมบทบาทเป็น ฮีโร่ของสัตว์เลี้ยง ในการทำภารกิจประจำวันต่างๆ โดยเราสามารถเลือก Perk ที่เราต้องการจะเน้นได้ เช่น 
